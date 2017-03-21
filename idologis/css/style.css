@@ -1,0 +1,177 @@
+body {
+	padding: 54px 0 0 0;
+	margin: 0;
+	background: #f9f9f9;
+	font-size: 14px;
+	color: #000;
+	font-family: calibri, arial;
+}
+
+.content {
+	margin: auto;
+	width: 900px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+header nav {
+	display: inline-block;
+	margin: 0 0 0 22px;
+	font-size: 18px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+header .header-logo {
+	display: inline-block;
+	max-height: 50px;
+	vertical-align: middle;
+}
+
+header nav a {
+	display: inline-block;
+	padding: 16px 0;
+	width: 90px;
+	color: #000;
+	text-decoration: none;
+}
+
+header nav a:hover {
+	color: #28A2FE;
+}
+
+input[type="text"], input[type="password"], textarea {
+	margin: 2px 0;
+	width: 220px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding: 6px;
+	border-radius: 2px;
+}
+
+input[type="submit"], button {
+	margin: 2px 0;
+	padding: 10px 22px;
+	background: #64BBFE;
+	color: #fff;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+select {
+	margin: 4px 0;
+	padding: 4px;
+	background: #fff;
+	color: #000;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+}
+
+#opacity {
+	display: none;
+	position: fixed;
+	z-index: 3;
+	background: rgba(0, 0, 0, 0.6);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+#opacity .opacity-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#opacity .opacity-content-popup {
+	display: block;
+	margin: auto;
+	padding: 10px;
+	background: #fff;
+	width: 700px;
+}
+
+#cover {
+	display: table;
+	background: #64BBFE;
+	height: 240px;
+	width: 100%;
+	text-align: center;
+}
+
+#cover .cover-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#cover .cover-content h2, #cover .cover-content h3 {
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	font-weight: normal;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#cover .cover-content h2 {
+	font-size: 60px;
+}
+
+#cover .cover-content h3 {
+	margin: 10px 0 0 0;
+	font-size: 36px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+table tr th {
+	padding: 3px 0;
+	text-align: center;
+	border: 1px solid #eee;
+	color: #64BBFE;
+}
+
+table tr td {
+	padding: 10px;
+	border: 1px solid #eee;
+}
+
+h1 {
+	padding: 0;
+	margin: 0;
+	font-size: 26px;
+}
+
+footer {
+	margin: 30px 0 0 0;
+	text-align: center;
+	font-size: 12px;
+	color: #333;
+}
+
+footer a {
+	color: #666;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
