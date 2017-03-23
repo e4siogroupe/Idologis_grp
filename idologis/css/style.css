@@ -29,6 +29,7 @@ header nav {
 	display: inline-block;
 	margin: 0 0 0 22px;
 	font-size: 18px;
+	min-width: 700px;
 	vertical-align: middle;
 	text-decoration: none;
 }
@@ -41,6 +42,7 @@ header .header-logo {
 
 header nav a {
 	display: inline-block;
+	text-align: center;
 	padding: 16px 0;
 	width: 90px;
 	color: #000;
@@ -51,13 +53,23 @@ header nav a:hover {
 	color: #28A2FE;
 }
 
+header nav a.active {
+	color: #28A2FE;
+	font-weight: bold;
+}
+
+header nav a.right {
+	float: right;
+}
+
 input[type="text"], input[type="password"], textarea {
 	margin: 2px 0;
 	width: 220px;
-	border: 1px solid #ddd;
+	border: none;
 	background: #fff;
 	padding: 6px;
 	border-radius: 2px;
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 input[type="submit"], button {
@@ -77,6 +89,15 @@ select {
 	color: #000;
 	border: 1px solid #ddd;
 	border-radius: 2px;
+}
+
+select.selectpicker {
+	display: inline-block;
+	padding: 6px;
+	margin: 0 0 0 16px;
+	border: none;
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+	vertical-align: middle;
 }
 
 #opacity {
@@ -99,11 +120,56 @@ select {
 }
 
 #opacity .opacity-content-popup {
+	position: relative;
 	display: block;
 	margin: auto;
 	padding: 10px;
 	background: #fff;
 	width: 700px;
+	text-align: left;
+}
+
+#opacity .opacity-content-popup .opacity-content-popup-close {
+	position: absolute;
+	padding: 16px;
+	right: 0px;
+	top: -8px;
+	font-size: 24px;
+	color: #666;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#opacity .opacity-content-popup .opacity-content-popup-close:before {
+	content: "X";
+}
+
+#opacity .opacity-content-popup .opacity-content-popup-close:hover {
+	color: #000;
+}
+
+#opacity .opacity-content h3 {
+	padding: 0;
+	margin: 0 0 6px 0;
+	font-size: 22px;
+}
+
+#opacity .opacity-content img {
+	max-width: 50%;
+	max-height: 100%;
+	vertical-align: middle;
+}
+
+#opacity .opacity-content .infos {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 20px;
+}
+
+#opacity .opacity-content b {
+	display: inline-block;
+	margin: 4px 0;
+	min-width: 120px;
 }
 
 #cover {
@@ -137,27 +203,100 @@ select {
 }
 
 table {
+	margin: 16px 0 0 0;
 	width: 100%;
 	border-collapse: collapse;
 	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
+table tr th, table tr td {
+	background: #fff;
+}
+
 table tr th {
-	padding: 3px 0;
+	padding: 6px 0;
+	font-size: 16px;
 	text-align: center;
-	border: 1px solid #eee;
-	color: #64BBFE;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	color: #333;
 }
 
 table tr td {
+	text-align: center;
 	padding: 10px;
-	border: 1px solid #eee;
+	border-left: 1px solid #eee;
 }
 
 h1 {
 	padding: 0;
 	margin: 0;
+	font-size: 28px;
+}
+
+h2 {
+	padding: 2px 0;
+	margin: 2px 0;
 	font-size: 26px;
+}
+
+.content.white h1, .content.white h2 {
+	margin: 10px 0;
+	color: #fff;
+	font-size: 40px;
+	font-weight: normal;
+	text-align: center;
+	text-align: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.content.white h2 {
+	font-size: 16px;
+}
+
+.content.white form {
+	text-align: center;
+}
+
+.content.white input[type="submit"] {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.logements {
+	text-align: center;
+}
+
+.logement {
+	padding: 0 8px 0 0;
+	display: inline-block;
+	opacity: 0.9;
+	cursor: pointer;
+}
+
+.logement:hover {
+	opacity: 1;
+}
+
+.logement img {
+	width: 150px;
+	height: 150px;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background: #64BBFE;
+	height: 220px;
+}
+
+.error {
+	padding: 4px;
+	margin: 2px 0;
+	background: red;
+	color: #fff;
 }
 
 footer {

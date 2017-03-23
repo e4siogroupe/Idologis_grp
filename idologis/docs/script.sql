@@ -70,15 +70,15 @@ INSERT INTO secteur VALUE (NULL, "Dunkerque");
 INSERT INTO secteur VALUE (NULL, "Lille");
 
 INSERT INTO vente (id_type, id_secteur, surface, chambres, surface_terrain, classe_energetique, les_plus, prix, img)
-VALUES (1, 1, 150, 3, 500, "B", "Piscine", 125900, vente1);
+VALUES (1, 1, 150, 3, 500, "B", "Piscine", 125900, "vente1");
 
 INSERT INTO vente (id_type, id_secteur, surface, chambres, surface_terrain, classe_energetique, les_plus, prix, img)
-VALUES (2, 2 , 72, 2, 130, "C", "", 53000, vente2);
+VALUES (2, 2 , 72, 2, 130, "C", "", 53000, "vente2");
 
 INSERT INTO location (id_type, id_secteur, surface, chambres, surface_terrain, classe_energetique, les_plus, loyer, img)
-VALUES (3, 3, 150, 3, 500, "B", "Piscine", 125900, location1);
+VALUES (3, 3, 150, 3, 500, "B", "Piscine", 125900, "location1");
 
 INSERT INTO location (id_type, id_secteur, surface, chambres, surface_terrain, classe_energetique, les_plus, loyer, img)
-VALUES (2, 2, 72, 2, 130, "C", "", 53000, location2);
+VALUES (2, 2, 72, 2, 130, "C", "", 53000, "location2");
 
 INSERT INTO admin VALUES (null, "root", "63a9f0ea7bb98050796b649e85481845");

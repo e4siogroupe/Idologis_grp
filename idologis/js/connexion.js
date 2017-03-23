@@ -18,7 +18,7 @@ $(function(){
                     window.location = window.location.href.replace("connexion.php", "administration.php");
                 }
                 else {
-                    $('#resultat').html('<p>Identifiant ou mot de passe incorrect.</p>');
+                    $('#resultat').html('<div class="error">Identifiant ou mot de passe incorrect.</div><br />');
                 }
             }
         });

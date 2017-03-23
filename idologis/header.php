@@ -4,7 +4,11 @@ require_once('config.php');
 require_once('control/token.php');
 require_once('control/connexionDb.php');
 
-$token = new token(); 
+$token = new token();
+
+if(!isset($pageId)) {
+	$pageId = 0;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,11 +31,11 @@ $token = new token();
 			<div class="content">
 				<a href="<?=host?>"><img src="img/banniere.png" class="header-logo" /></a>
 				<nav>
-					<a href="<?=host?>index.php">Accueil</a>
-					<a href="<?=host?>ventes.php">Ventes</a>
-					<a href="<?=host?>locations.php">Location</a>
+					<a href="<?=host?>index.php"<?php if($pageId === 0) echo ' class="active"'; ?>>Accueil</a>
+					<a href="<?=host?>ventes.php"<?php if($pageId === 1) echo ' class="active"'; ?>>Ventes</a>
+					<a href="<?=host?>locations.php"<?php if($pageId === 2) echo ' class="active"'; ?>>Location</a>
 					<?php if(isset($_SESSION['logged']) && $_SESSION['logged'] === true) { ?>
-					<a onclick="conf=confirm('Etes-vous certain de vouloir vous déconnecter ?');return(conf)" href="<?=host?>control/deco.php?k=<?=$token->make('logout')?>">Déconnexion</a>
+					<a class="right" onclick="conf=confirm('Etes-vous certain de vouloir vous déconnecter ?');return(conf)" href="<?=host?>control/deco.php?k=<?=$token->make('logout')?>">Déconnexion</a>
 					<?php } ?>
 				</nav>
 			</div>
