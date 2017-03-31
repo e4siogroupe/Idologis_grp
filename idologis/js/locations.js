@@ -28,7 +28,7 @@ $(function() {
 
     	$.ajax({
 	    	method: "POST",
-	    	url: host + "control/selectLocations.php",
+	    	url: host + "ajax/selectLocations.php",
 	    	data: {
 	    		tri: (tri)
 	    	},
@@ -53,9 +53,9 @@ $(function() {
                                                                 '<td>' + value.ref + '</td>' +
                                                                 '<td>' + value.type + '</td>' +
                                                                 '<td>' + value.secteur + '</td>' +
-                                                                '<td>' + value.surface + '</td>' +
-                                                                '<td>' + value.loyer + '</td>' +
-                                                                '<td><button data-id="'+idRow+'">Détails</button></td>' +
+                                                                '<td>' + value.surface + ' m²</td>' +
+                                                                '<td>' + value.loyer + ' € / mois</td>' +
+                                                                '<td><button data-id="' + idRow + '" data-ref="' + value.ref + '">Détails</button></td>' +
                                                             '</tr>');
 
                         details[idRow] = {
@@ -67,6 +67,14 @@ $(function() {
 
                         idRow++;
                     });
+                }
+
+                // Afficher via URL
+                hash = window.location.href.split('#')[1];
+                if(hash) {
+                    if(!isNaN(hash)) {
+                     $('.content table tbody').find('button[data-ref="'+hash+'"]').click();
+                    }
                 }
 	    	}
 	    });
@@ -91,6 +99,7 @@ $(function() {
         															'</div>');
 
     	$('#opacity').css('display', 'table');
-    	$('#opacity .opacity-content').show();
+    	$('#opacity .opacity-content-popup').css('margin-top', $(window).height()).show();
+        $('#opacity .opacity-content-popup').animate({"margin-top": 0}, 100);
     });
 });

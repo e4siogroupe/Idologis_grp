@@ -7,16 +7,16 @@ $(function(){
 		var token = $('#addAccount input').eq(3).val();
 
 		if(username == "" || password == "" || passwordV == ""){
-			$('#error').html('<p class="alert alert-danger">Veuillez compléter tous les champs du formulaire.</p>');
+			$('#error').html('<div class="error"><p>Veuillez compléter tous les champs du formulaire.</p></div>');
 		}
 
 		else {
 			if(password !== passwordV) {
-				$('#error').html('<p class="alert alert-danger">Les mots de passe ne correspondent pas.</p>');
+				$('#error').html('<div class="error"><p>Les mots de passe ne correspondent pas.</p></div>');
 			}
 			else {
 				$.ajax({
-					url : host + "control/addAccount.php",
+					url : host + "ajax/addAccount.php",
 					type : "POST",
 					data : { 
 						username: username,
@@ -25,7 +25,7 @@ $(function(){
 					},
 					dataType : "text",
 					success : function(data){
-						$('#error').html('<p class="alert alert-success">L\'utilisateur a été ajouté avec succès.</p>');
+						$('#error').html('<div class="success"><p>L\'utilisateur a été ajouté avec succès.</p></div>');
 					},
 					error: function() {
               			alert('La requête n\'a pas abouti.'); 
@@ -34,6 +34,7 @@ $(function(){
 			}	
 		}
 
+		$('#error').show();
 		return false;
 	});
 });

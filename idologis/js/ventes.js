@@ -28,7 +28,7 @@ $(function() {
 
     	$.ajax({
 	    	method: "POST",
-	    	url: host + "control/selectVentes.php",
+	    	url: host + "ajax/selectVentes.php",
 	    	data: {
 	    		tri: (tri)
 	    	},
@@ -53,20 +53,29 @@ $(function() {
 		    													'<td>' + value.ref + '</td>' +
 		    													'<td>' + value.type + '</td>' +
 		    													'<td>' + value.secteur + '</td>' +
-		    													'<td>' + value.surface + '</td>' +
-		    													'<td>' + value.prix + '</td>' +
-		    													'<td><button data-id="'+idRow+'">Détails</button></td>' +
+		    													'<td>' + value.surface + ' m²</td>' +
+		    													'<td>' + value.prix + ' €</td>' +
+		    													'<td><button data-id="' + idRow + '" data-ref="' + value.ref + '">Détails</button></td>' +
 		    												'</tr>');
 
 		    			details[idRow] = {
 		    				"terrain": value.terrain,
 		    				"classe": value.classe,
-		    				"plus": value.plus
+		    				"plus": value.plus,
+		    				"img" : value.img
 		    			}
 
 		    			idRow++;
 		    		});
 		    	}
+
+		    	// Afficher via URL
+                hash = window.location.href.split('#')[1];
+                if(hash) {
+                    if(!isNaN(hash)) {
+                     $('.content table tbody').find('button[data-ref="'+hash+'"]').click();
+                    }
+                }
 	    	}
 	    });
     }
@@ -76,7 +85,8 @@ $(function() {
     	var idRow = $(this).data('id');
     	var detailsRow = details[idRow];
 
-    	$('#opacity .opacity-content .opacity-content-popup').html( '<div class="opacity-content-popup-close"></div><h3>Détails</h3>' + 
+    	$('#opacity .opacity-content .opacity-content-popup').html( '<div class="opacity-content-popup-close"></div><h3>Détails</h3>' +
+    																'<img src="'+host+'img/' + detailsRow.img + '.png" alt="Image d\'illustration" />' + 
     																'<div class="infos">' + 
 	    																'<b>Ref:</b>' + $('.content table tbody tr').eq(idRow-1).find('td').eq(0).html() + '<br />' +
 	    																'<b>Type:</b>' + $('.content table tbody tr').eq(idRow-1).find('td').eq(1).html() + '<br />' +
@@ -89,6 +99,7 @@ $(function() {
 	    															'</div>');
 
     	$('#opacity').css('display', 'table');
-    	$('#opacity .opacity-content').show();
+    	$('#opacity .opacity-content-popup').css('margin-top', $(window).height()).show();
+        $('#opacity .opacity-content-popup').animate({"margin-top": 0}, 100);
     });
 });

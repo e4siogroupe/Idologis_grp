@@ -7,19 +7,19 @@ if($_SESSION['logged'] !== true) {
 	die();
 }
 
-require_once("config.php");
+require_once("inc/config.php");
 
 $js = '<script type="text/javascript" src="'.host.'js/addAccount.js"></script>';
 $pageId = 4;
 
-require_once("header.php");
+require_once("inc/header.php");
 ?>
 
 
 <div class="content">
 	<p>Modifier la couleur du site</p>
 	<div id="color" style="display:inline-block;">
-		<form action="control/changerCouleur.php" method="get">
+		<form action="<?=host?>ajax/changerCouleur.php" method="get">
 			<input type="hidden" name="token" value="<?=$token->make('color')?>" />
 			<input type="color" name="color" />
 			<input type="submit" name="submit" value="Modifier" />
@@ -34,9 +34,9 @@ require_once("header.php");
 		<input type="hidden" name="token" value="<?=$token->make('addAccount')?>" />
 		<input type="submit" name="submit" value="Ajouter" />
 	</form>
-	<div id="error" class="error"></div>
+	<div id="error" style="display:none"></div>
 </div>
 
 <?php
-require_once("footer.php");
+require_once("inc/footer.php");
 ?>

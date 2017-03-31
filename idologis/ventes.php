@@ -1,8 +1,8 @@
 <?php
-require_once('config.php');
+require_once("inc/config.php");
 $js = '<script type="text/javascript" src="'.host.'js/ventes.js"></script>';
 $pageId = 1;
-require_once("header.php");
+require_once("inc/header.php");
 ?>
 
 <div class="content white">
@@ -37,5 +37,5 @@ require_once("header.php");
 </div>
 
 <?php 
-require_once("footer.php"); 
+require_once("inc/footer.php"); 
 ?>
