@@ -1,9 +1,6 @@
 <?php
-
 try {
-	$user = "root";
-	$pass="root";
-    $pdo = new PDO('mysql:host=192.168.176.15;dbname=idologis', $user, $pass);
+    $pdo = new PDO('mysql:host='.db_host.';dbname='.db_name, db_user, db_password);
 } 
 catch (PDOException $e) {
     echo $e->getMessage();

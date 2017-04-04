@@ -1,4 +1,5 @@
 <?php
+require_once('inc/config.php');
 $pageId = 0;
 require_once("inc/header.php");
 ?>

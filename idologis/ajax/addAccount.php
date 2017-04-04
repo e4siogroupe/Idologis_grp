@@ -4,6 +4,7 @@ session_start();
 require_once("../inc/token.php");
 $token = new token();
 
+require_once('../inc/config.php');
 require_once("../inc/db.php"); 
 
 if($_SESSION['logged'] !== true) {

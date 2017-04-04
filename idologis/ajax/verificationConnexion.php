@@ -2,6 +2,7 @@
 session_start();
 header('Content-type: application/json');
 
+require_once('../inc/config.php');
 require_once("../inc/db.php"); 
 
 $array = array('code' => 'fail');

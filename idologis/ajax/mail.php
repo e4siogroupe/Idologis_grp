@@ -2,9 +2,8 @@
 session_start();
 header('Content-type: application/json');
 
-require_once("../inc/db.php"); 
-
-require_once("../inc/config.php");
+require_once('../inc/config.php');
+require_once("../inc/db.php");
 
 $error = "";
 if(isset($_POST['message']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['objet'])) {

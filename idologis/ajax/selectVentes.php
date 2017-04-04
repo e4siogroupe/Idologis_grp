@@ -1,6 +1,7 @@
 <?php
 header('Content-type: application/json');
 
+require_once('../inc/config.php');
 require_once("../inc/db.php");
 
 if(isset($_POST['tri']) && $_POST['tri'] == "ASC") {
