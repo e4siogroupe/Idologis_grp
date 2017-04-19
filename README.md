@@ -1,3 +1,3 @@
-# Le projet de l'Idologis
+# Le projet Idologis
 
-Bienvenue sur le projet de l'Idologis mes chers camarades.
+Bienvenue sur le projet PPE Idologis.
