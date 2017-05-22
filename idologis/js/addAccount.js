@@ -37,6 +37,26 @@ $(function(){
 		$('#error').show();
 		return false;
 	});
+
+	$('#supprimerAdmin button').on('click', function(){
+		var elementSup = $(this).parent().parent();
+
+		$.ajax({
+			url : host + "ajax/removeAccount.php",
+			type : "POST",
+			data : { 
+				id: $(this).data('id'),
+				token: $('#supprimerAdmin').data('token')
+			},
+			dataType : "text",
+			success : function(data){
+				$(elementSup).remove();
+			},
+			error: function() {
+      			alert('La requête n\'a pas abouti.'); 
+      		}
+		});
+	});
 });
 
 

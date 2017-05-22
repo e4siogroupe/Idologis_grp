@@ -102,6 +102,23 @@ input[type="submit"], button {
 	cursor: pointer;
 }
 
+input[type="color"] {
+	padding: 0;
+	margin: 0;
+	height: 43px;
+	width: 90px;
+	vertical-align: middle;
+	cursor: pointer;
+	border: none;
+	background: none;
+	border-radius: 2px;
+	opacity: 0.8;
+}
+
+input[type="color"]:hover {
+	opacity: 1;
+}
+
 select {
 	margin: 4px 0;
 	padding: 4px;
@@ -290,6 +307,10 @@ h2 {
 	font-weight: normal;
 }
 
+.content.admin {
+	padding: 0 12px;
+}
+
 .content.white h1, .content.white h2 {
 	margin: 10px 0;
 	color: #fff;
@@ -388,4 +409,17 @@ footer a {
 
 footer a:hover {
 	color: #1EC7D7;
+}
+
+form#contact {
+	width: 350px;
+	padding: 10px;
+	margin-top: -15px;
+	background: #fff;
+	box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+form#contact input[type="text"], form#contact input[type="email"], form#contact textarea {
+	background: #fefefe;
+	box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
 }

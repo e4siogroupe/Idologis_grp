@@ -24,7 +24,7 @@ if(!isset($pageId)) {
 		<script type="text/javascript">var host = "<?=host?>";</script>
 		<?php if(isset($js)) { echo $js; } ?>
 	</head>
-	<body style="background:<?=htmlspecialchars(file_get_contents('control/color.txt'))?>">
+	<body style="background:<?=htmlspecialchars(file_get_contents(root.'ajax/color.txt'))?>">
 		<div id="opacity">
 			<div class="opacity-content">
 				<div class="opacity-content-popup"></div>
